@@ -1,17 +1,26 @@
+
 import mil.nga.mgrs.MGRS;
-import mil.nga.grid.features.Point;
+import mil.nga.grid.features.Point;   // <-- IMPORTANT
 
-public class Main {
+
+public class Layer {
     public static void main(String[] args) {
-        double latitude = 28.6139;   // New Delhi
-        double longitude = 77.2090;
+    
 
-        // Create a Point (x = longitude, y = latitude)
-        Point point = Point.point(longitude, latitude);
+double latitude = 51.5074;   // London approximate
+double longitude = -0.1278;
 
-        // Convert to MGRS
-        MGRS mgrs = MGRS.from(point);
+// Create a Point from the lat/lon (Longitude, Latitude)
+Point point = Point.point(longitude, latitude);
 
-        System.out.println("MGRS: " + mgrs.toString());
+// Convert to MGRS
+MGRS mgrs = MGRS.from(point);
+
+// Default string
+System.out.println("MGRS (default): " + mgrs.toString());
+
+
+        
     }
 }
+
